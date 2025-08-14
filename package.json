@@ -1,0 +1,17 @@
+{
+  "name": "cloudctrl-weather",
+  "version": "1.0.0",
+  "description": "CloudCtrl - A modern Weather App with Node.js, Express, and vanilla HTML/CSS/JS",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.3.2"
+  }
+}

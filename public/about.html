@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>About • Shrihari Weather Predictor</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23fff' d='M20 44h24a12 12 0 100-24 16 16 0 10-24 20z'/%3E%3C/svg%3E"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css"/>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      animation: fadeIn 1s ease;
+    }
+    header {
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      width: 40px;
+      height: 40px;
+      fill: white;
+      margin-right: 8px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    a {
+      color: #ffd86f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .highlight {
+      font-weight: 600;
+      color: #ffd86f;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background: rgba(0,0,0,0.2);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 64 64"><path d="M20 44h24a12 12 0 100-24 16 16 0 10-24 20z"></path></svg>
+      Shrihari Weather Predictor
+    </div>
+    <nav>
+      <a href="index.html">← Back to App</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>About Me & This Project</h1>
+    <p>Hello! I’m <span class="highlight">Shrihari Jawalgi</span>, currently pursuing my degree in Information Science and Engineering. This Weather App — <strong>CloudCtrl</strong> — was built as part of the <span class="highlight">IEEE UVCE CodeFury 8.0</span> hackathon.</p>
+    
+    <p>The goal was to create a fast, visually appealing, and user-friendly tool that delivers real-time weather updates for any location worldwide. The project uses <strong>Node.js</strong>, <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> with the OpenWeatherMap API, along with modern UI styling and animations to make it a delightful experience.</p>
+    
+    <p>I have completed several <span class="highlight">relevant certifications</span> in web development and related technologies, and I have built other projects you can explore on my <a href="https://github.com/yourgithubusername" target="_blank">GitHub</a>. I have also completed <span class="highlight">two internships</span> where I applied my skills in real-world scenarios, gaining hands-on experience in both frontend and backend development.</p>
+
+    <p>Through this project, I aimed to combine functionality with creativity — from fetching live data to implementing smooth animations — while keeping the app responsive and easy to use for everyone.</p>
+
+    <p>If you’d like to connect or see more of my work, here are some links:
+      <ul>
+        <li><a href="https://github.com/yourgithubusername" target="_blank">GitHub Profile</a></li>
+        <li><a href="https://linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a></li>
+      </ul>
+    </p>
+  </main>
+
+  <footer>
+    Made with ☁️ by Shrihari Jawalgi • IEEE UVCE CodeFury 8.0
+  </footer>
+</body>
+</html>

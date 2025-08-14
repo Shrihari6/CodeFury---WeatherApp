@@ -1,0 +1,172 @@
+:root{
+  --bg1:#0f172a; 
+  --bg2:#1e293b; 
+  --card:#0b1220cc;
+  --text:#e2e8f0;
+  --muted:#94a3b8;
+  --accent:#38bdf8; /* sky-400 */
+  --shadow: 0 10px 40px rgba(0,0,0,.35);
+}
+
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 80% -10%, rgba(56,189,248,.35), transparent 50%),
+              radial-gradient(800px 600px at 10% 110%, rgba(168,85,247,.25), transparent 50%),
+              linear-gradient(160deg, var(--bg1), var(--bg2));
+  overflow-x:hidden;
+}
+
+.bg::before, .bg::after{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  background: url('data:image/svg+xml;utf8,\
+  <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">\
+  <defs><radialGradient id="g" cx="50%" cy="50%" r="50%">\
+  <stop offset="0%" stop-color="white" stop-opacity="0.08"/>\
+  <stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs>\
+  <ellipse cx="300" cy="200" rx="220" ry="120" fill="url(%23g)"/>\
+  <ellipse cx="700" cy="300" rx="260" ry="140" fill="url(%23g)"/>\
+  <ellipse cx="1000" cy="120" rx="180" ry="100" fill="url(%23g)"/>\
+  <ellipse cx="200" cy="450" rx="200" ry="120" fill="url(%23g)"/>\
+  </svg>') repeat;
+  animation: drift 90s linear infinite;
+  opacity:.6; pointer-events:none;
+  mix-blend-mode: screen;
+}
+.bg::after{ animation-duration: 130s; opacity:.4; filter: blur(2px); }
+
+@keyframes drift { from{ transform: translateX(0)} to{ transform: translateX(-50%)} }
+
+.topbar{
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  align-items: center;
+  justify-content: center;
+  padding:16px 20px;
+  backdrop-filter: blur(12px);
+  background: linear-gradient(transparent, rgba(11,18,32,.6) 60%);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.4px }
+.logo{ width:28px; height:28px; fill:white; filter: drop-shadow(0 4px 6px rgba(56,189,248,.35)); }
+
+.actions{ display:flex; 
+  align-items:center;
+  justify-content: center;
+  gap:52px; }
+
+.search{ display:flex; gap:8px; align-items:center; justify-content: center; }
+.search input{
+  padding:10px 12px; min-width: 360px;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  align-items: center;
+  justify-content: center;
+  border-radius:14px; color:var(--text); outline:none;
+  transition:.2s border-color, .2s transform;
+}
+.search input:focus{ border-color: var(--accent); transform: translateY(-1px); }
+.search button{
+  padding:10px 14px; border-radius:12px; border:0; cursor:pointer;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  align-items: center;
+  justify-content: center;
+  color:white; font-weight:600; box-shadow: var(--shadow);
+  transition: .15s transform ease;
+}
+.search button:active{ transform: translateY(1px) scale(.98); 
+  justify-content: center; } 
+
+.units{
+  display:flex; border-radius:12px; overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+}
+.units button{
+  padding:10px 12px; background:transparent; color:var(--text);
+  border:0; cursor:pointer; font-weight:600;
+}
+.units button.active{
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(8px);
+}
+
+
+
+
+.ghost{
+  background: transparent; border:1px solid rgba(255,255,255,.15);
+  padding:10px 12px; border-radius:12px; color:var(--text); cursor:pointer; font-weight:600;
+}
+
+main{
+  max-width:1100px; margin: 24px auto; padding: 0 16px;
+  display:grid; gap:16px;
+}
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px; padding:16px; box-shadow: var(--shadow);
+  overflow:hidden; transition: .25s transform ease, .25s border-color;
+}
+.card:hover{ transform: translateY(-2px) }
+.card h2{ margin:8px 8px 12px; font-size:18px }
+
+.skeleton{ position:relative }
+.skeleton::after{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent);
+  animation: shimmer 1.2s infinite; transform: translateX(-100%);
+}
+@keyframes shimmer { 100% { transform: translateX(100%)} }
+
+.current-top{ display:flex; align-items:center; justify-content:space-between; padding:4px 8px }
+.current-top h1{ margin:0; font-size:22px }
+.icon-btn{
+  background: rgba(255,255,255,.1); border:0; color:gold; padding:8px 10px; border-radius:10px; cursor:pointer;
+  transition: .2s transform;
+}
+.icon-btn:active{ transform: scale(.96) }
+
+.current-body{ display:flex; flex-wrap:wrap; align-items:center; gap:14px; padding:10px 8px }
+.temp-wrap{ display:flex; align-items:center; gap:16px }
+.temp{ font-size:64px; line-height:1; font-weight:800; letter-spacing:-1px; text-shadow: 0 6px 30px rgba(0,0,0,.35) }
+.wx-icon{ width:82px; height:82px }
+
+.meta{ color:var(--muted); display:grid; gap:6px }
+
+.strip{ display:flex; gap:10px; padding:8px }
+.scroll-x{ overflow-x:auto }
+.grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap:10px }
+
+.tile{
+  background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);
+  border-radius:16px; padding:10px; min-width:90px; text-align:center; backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+.tile .t-time{ color:var(--muted); font-size:12px }
+.tile .t-temp{ font-weight:700; font-size:14px }
+
+.tile.day .d-name{ font-weight:700; margin-bottom:4px }
+.tile.day .d-range{ color:var(--muted) }
+
+.favorites{ display:flex; flex-wrap:wrap; gap:8px; padding:8px }
+.favorites .chip{
+  padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06); cursor:pointer; transition:.2s transform;
+}
+.favorites .chip:hover{ transform: translateY(-1px) }
+
+.footer{ text-align:center; color:var(--muted); padding:30px 0 50px }
+
+/* small screens */
+@media (max-width:640px){
+  .search input{ min-width: 160px }
+  .temp{ font-size:48px }
+}
