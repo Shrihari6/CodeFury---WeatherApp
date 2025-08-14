@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node server.js",
+    "build": "echo 'No build needed'",
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
