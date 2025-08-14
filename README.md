@@ -1,5 +1,5 @@
 
-# CloudCtrl – Modern Weather App (HTML/CSS/JS + Node.js)
+# Weather App- Pre hackathon
 
 A sleek, animated, and user-friendly weather app. The Node.js backend securely proxies requests to the OpenWeatherMap API and adds caching. The frontend is vanilla HTML/CSS/JS with glassmorphism, animated gradients, and delightful micro-interactions.
 
