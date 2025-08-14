@@ -4,11 +4,17 @@ import morgan from "morgan";
 import cors from "cors";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
+
 
 dotenv.config();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+/*const PORT = process.env.PORT || 3000;*/
 const OWM_API_KEY = process.env.OWM_API_KEY;
 
 if (!OWM_API_KEY) {
@@ -18,7 +24,7 @@ if (!OWM_API_KEY) {
 // Middleware
 app.use(morgan("dev"));
 app.use(cors());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Simple in-memory cache with TTL
 const cache = new Map();
@@ -101,6 +107,10 @@ app.get("/api/weather", async (req, res) => {
   }
 });
 
+/*
 app.listen(PORT, () => {
   console.log(`Go visit my server which is  running at http://localhost:${PORT}`);
 });
+*/
+
+export default app;
