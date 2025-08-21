@@ -3,7 +3,7 @@
 
 A sleek, animated, and user-friendly weather app. The Node.js backend securely proxies requests to the OpenWeatherMap API and adds caching. The frontend is vanilla HTML/CSS/JS with glassmorphism, animated gradients, and delightful micro-interactions.
 
-## Features![Uploading Screenshot 2025-08-21 185721.png…]()
+## Features!
 
 - Search any city or use current location (Geolocation).
 - Real-time current weather + 5-day / 3‑hour forecast.
